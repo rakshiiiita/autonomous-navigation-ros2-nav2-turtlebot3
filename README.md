@@ -1,71 +1,53 @@
 # Autonomous Navigation using ROS 2 Nav2 and TurtleBot3
 
-## Overview
+## 📌 Overview
 
-This is an academic robotics project completed as part of the Robot System Design and SLAM practical course.
+This project demonstrates autonomous point-to-point navigation of a TurtleBot3 Burger using the ROS 2 Navigation (Nav2) stack in a simulated environment.
 
-The project demonstrates autonomous point-to-point navigation of a TurtleBot3 Burger in a simulated environment using the ROS 2 Navigation (Nav2) stack.
+The work was completed as an academic practical for the Robot System Design and SLAM course. The experiment focuses on robot localization, path planning, obstacle avoidance, costmaps, and autonomous navigation using RViz2 and Gazebo.
 
-## Objectives
+---
 
-- Load and use a saved occupancy-grid map.
+## 🎯 Objectives
+
+- Perform autonomous navigation of a TurtleBot3 Burger.
+- Load and use an occupancy-grid map.
 - Localize the robot using AMCL.
-- Plan a collision-free global path.
+- Generate a global navigation path.
+- Execute the path using a local controller.
 - Send navigation goals through RViz2.
-- Understand global and local path planning.
-- Observe obstacle inflation using the costmap.
-- Test navigation recovery behavior.
-- Verify navigation using action feedback.
+- Understand costmaps and obstacle inflation.
+- Observe the robot navigating toward a specified goal.
+- Verify successful goal achievement.
 
-## Technologies Used
+---
+
+## 🛠️ Technologies Used
 
 - ROS 2
 - Nav2
 - TurtleBot3 Burger
 - RViz2
+- Gazebo
 - AMCL
 - A* Global Planner
 - DWB Local Controller
-- Costmap
-- Gazebo / Simulation
+- Costmaps
+- Occupancy Grid Map
 
-## Navigation Workflow
+---
 
-The navigation process follows:
+## 🤖 Navigation Pipeline
 
-Map → Localization → Global Planning → Local Control → Goal
-
-The robot uses the saved occupancy-grid map to understand the environment, AMCL for localization, a global planner for generating a path, and a local controller for executing the path while considering obstacles.
-
-## Key Concepts
-
-### AMCL
-Adaptive Monte Carlo Localization is used to estimate the robot's position on the known map.
-
-### Global Planning
-A global planner generates a collision-free path from the robot's current position to the target position.
-
-### Local Control
-The local controller generates velocity commands that allow the robot to follow the planned path while responding to nearby obstacles.
-
-### Costmap
-The costmap represents obstacles and their surrounding regions. Obstacle inflation helps maintain a safe distance from obstacles.
-
-## Result
-
-The TurtleBot3 was configured for autonomous point-to-point navigation in the simulated environment. Navigation goals were provided through RViz2 and the robot's navigation behavior was observed and verified.
-
-## Academic Context
-
-Course: Robot System Design and SLAM
-
-Experiment: 7
-
-Project Type: Academic Practical
-
-## Author
-
-Rakshita Dhaketa
-
-B.Tech Robotics and Automation  
-Medi-Caps University
+```text
+        Map
+         ↓
+   AMCL Localization
+         ↓
+ Global Path Planning
+         ↓
+   Local Controller
+         ↓
+ Obstacle Avoidance
+         ↓
+    Navigation Goal
