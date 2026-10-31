@@ -24,6 +24,7 @@ The work was completed as an academic practical for the Robot System Design and 
 
 ## 🛠️ Technologies Used
 
+- Ubuntu
 - ROS 2
 - Nav2
 - TurtleBot3 Burger
